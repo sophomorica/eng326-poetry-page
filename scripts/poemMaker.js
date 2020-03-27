@@ -3,9 +3,9 @@ import { poems } from "../data/poems.js";
 $(document).ready(function(){
   
   const poemTitle = $("#PoemTitle")
-  const poemContainer = $("#PoemContainer")
   const author = $("#PoemAuthor")
   const button = $("#Randomizer")
+  const poemContainer = $("#PoemContainer")
   const poemBody = $("#PoemDiv")
   
   button.on("click", function(){
@@ -22,6 +22,7 @@ $(document).ready(function(){
       poemBody.append($("<p></p>").text(line))
     }
     )
+    // poemBody.text(`${foundPoem.content}`)
 
     author.text(`by: ${foundPoem.author}`)
   })

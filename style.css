@@ -1,0 +1,15 @@
+.paragraph{
+
+  font-size: 15px;
+  
+}
+#paragraphOne{
+  color:blue;
+  font-size: 30px;
+}
+#paragraphTwo{
+  color: green;
+}
+#paragraphThree{
+  color: orange;
+}

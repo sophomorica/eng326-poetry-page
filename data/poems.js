@@ -15,7 +15,8 @@ export const poems = [
     "id":2,
     "title": "Hello My Darling",
     "author":"me",
-    "content":[ "Hello my darling", "hello my honey", "hello my ragtime gal",]
+    "content":[ "Hello my darling", "hello my honey", "hello my ragtime gal",],
+    "youtube":""
   },
   {
     "id":3,
@@ -44,5 +45,12 @@ export const poems = [
     "Two roads diverged in a wood, and I—",
     "I took the one less traveled by,",
     "And that has made all the difference.",]
+  },
+  {
+    "id":4,
+    "title":"",
+    "author":"",
+    "content":["","","",""],
+    "youtube":"",
   }
 ]
