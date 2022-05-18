@@ -1,38 +1,46 @@
-
 import { poems } from "../data/poems.js";
-$(document).ready(function(){
-  
-  const poemTitle = $("#PoemTitle")
-  const author = $("#PoemAuthor")
-  const button = $("#Randomizer")
-  const poemContainer = $("#PoemContainer")
-  const poemBody = $("#PoemDiv")
-  
-  button.on("click", function(){
+$(document).ready(function () {
+  const poemTitle = $("#PoemTitle");
+  const author = $("#PoemAuthor");
+  const button = $("#Randomizer");
+  const poemContainer = $("#PoemContainer");
+  const poemBody = $("#PoemDiv");
+  let number = 100;
 
-    poemBody.children("p").remove()
+  button.on("click", function () {
+    function createPoem(num) {
+      poemBody.children("p").remove();
+      let foundPoem = poems[num - 1];
+      number = num;
+      poemTitle.text(`${foundPoem.title}`);
 
-    let num = Math.floor((Math.random()*poems.length +1))
-
-    let foundPoem = poems[num-1]
-
-    poemTitle.text(`${foundPoem.title}`)
-
-    foundPoem.content.forEach(line =>{
-      poemBody.append($("<p></p>").text(line))
+      foundPoem.content.forEach((line) => {
+        poemBody.append($("<p></p>").text(line));
+      });
+      author.text(`by: ${foundPoem.author}`);
     }
-    )
-    // poemBody.text(`${foundPoem.content}`)
+    console.log(number);
+    if (number != 100) {
+      console.log("did it");
+    }
 
-    author.text(`by: ${foundPoem.author}`)
-  })
+    let num = Math.floor(Math.random() * poems.length + 1);
+    if (number != num) {
+      createPoem(num);
+    } else {
+      console.log("hit*****");
+      if (poems.length > num) {
+        createPoem(num + 1);
+      } else {
+        createPoem(num - 1);
+      }
+    }
+  });
+});
 
-})
-
-// what you could do is take when you're setting state the second time 
+// what you could do is take when you're setting state the second time
 // .then((res)=>{
-  // setState(prev => () [...prev res.data])
-  // [...prev res.data] 
-  // })
+// setState(prev => () [...prev res.data])
+// [...prev res.data]
 // })
-
+// })
