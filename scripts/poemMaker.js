@@ -28,7 +28,6 @@ $(document).ready(function () {
     if (number != num) {
       createPoem(num);
     } else {
-      console.log("hit*****");
       if (poems.length > num) {
         createPoem(num + 1);
       } else {
